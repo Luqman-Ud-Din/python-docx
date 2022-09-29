@@ -42,8 +42,9 @@ def register_element_cls(tag, cls):
 def register_element_cls_ns(tag, ns, cls):
     """
     Register *cls* to be constructed when the oxml parser encounters an
-    element with matching *tag*. *tag* is a string of the form
-    ``nspfx:tagroot``, e.g. ``'w:document'``.
+    element with matching *tag*.
+    *tag* is a string of the form ``tagroot``, e.g. ``'Properties'``,
+    while the namespace is given explicitely by the *ns* argument.
     """
     namespace = element_class_lookup.get_namespace(ns)
     namespace[tag] = cls
